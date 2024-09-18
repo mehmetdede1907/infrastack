@@ -8,4 +8,4 @@ requests
 langchain
 openai
 anthropic
-crewai-sdk
+crewai[tools]
