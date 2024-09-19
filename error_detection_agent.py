@@ -1,9 +1,9 @@
 # error_detection_agent.py
 
 from crewai import Agent
-from mock import logs
-from mock import metrics
-from mock import traces
+from data.mock import logs
+from data.mock import metrics
+from data.mock import traces
 class ErrorDetectionAgent(Agent):
     def __init__(self):
         super().__init__(name="ErrorDetectionAgent")

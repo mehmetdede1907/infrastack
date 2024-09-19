@@ -9,3 +9,8 @@ langchain
 openai
 anthropic
 crewai[tools]
+crewai
+langchain
+openai
+faiss-cpu
+tiktoken
