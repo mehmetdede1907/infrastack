@@ -1,4 +1,4 @@
-from crewai import Agent, Task, Crew
+from crewai import Agent, Task
 
 error_detection_prompt = """
 Analyze the following logs to identify potential timeout errors:
@@ -23,14 +23,6 @@ def detect_errors(logs):
     task = Task(
         description=error_detection_prompt.format(logs=logs),
         agent=error_detector,
-        expected_output="A summary of detected timeout errors, including relevant log entries and their timestamps."
+        expected_output="A detailed summary of detected timeout errors, including relevant log entries and their timestamps."
     )
-    
-    crew = Crew(
-        agents=[error_detector],
-        tasks=[task],
-        verbose=2
-    )
-    
-    result = crew.kickoff()
-    return result
+    return task.execute()
